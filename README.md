@@ -1,7 +1,7 @@
 # Democracia
 Dapp de votação com ethereum, truffle e angularjs
 
-Exercício da disciplina de mestrado Tópicos Especiais em Computação: Desenvolvimento Ágil de Sistemas
+Exercício da disciplina de mestrado *Tópicos Especiais em Computação: Desenvolvimento Ágil de Sistemas*
 
 (UFSC, 2018/2)
 
