@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Democracia</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body ng-app="democracia">
+
+    <div class="container">
+      <section ng-view=""></section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-route.min.js"></script>
+    <script src="vendor/angular-animate.min.js"></script>
+    <script src="vendor/angular-sanitize.min.js"></script>
+    <script src="vendor/bootstrap.min.js"></script>
+    <script src="vendor/web3.min.js"></script>
+    <script src="vendor/truffle-contract.js"></script>
+    
+    <script src="modules/core/app.js"></script>
+    <script src="modules/democracia/welcome.controller.js"></script>
+  </body>
+</html>
