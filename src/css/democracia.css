@@ -1,0 +1,15 @@
+
+.f6 {
+    font-size: 2rem;
+}
+
+.nav, .pagination, .carousel, .card-title a { cursor: pointer; }
+
+.uib-right i svg{
+    width: 10px !important;
+    height: 10px !important;
+}
+.uib-left i svg{
+    width: 10px !important;
+    height: 10px !important;
+}

@@ -10,7 +10,8 @@
                                 'democracia.services',
                                 'ngRoute',
                                 'ngAnimate',
-                                'ngSanitize'
+                                'ngSanitize',
+                                'ui.bootstrap'
                              ]);
                     
     //route provider
@@ -21,8 +22,12 @@
             templateUrl: 'modules/democracia/welcome.html', 
             controller: 'WelcomeController'
         })
+        .when('/voto', {
+            templateUrl: 'modules/democracia/voto.html', 
+            controller: 'VotoController'
+        })
 
-        .when( '/', { redirectTo: '/welcome' })
+        .when( '/', { redirectTo: '/voto' })
         .otherwise ({ redirectTo: '/welcome' });
 
     }]);

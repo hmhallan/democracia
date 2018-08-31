@@ -15,20 +15,24 @@
     "url": "git+https://github.com/hmhallan/democracia.git"
   },
   "contributors": [
-    {"name": "Hallan Medeiros"},
-    {"name": "Luiz Rodrigo Albuquerque Pereira"},
-    {"name": "Angelica Caetane Pelizza"}
+    {
+      "name": "Hallan Medeiros"
+    },
+    {
+      "name": "Luiz Rodrigo Albuquerque Pereira"
+    },
+    {
+      "name": "Angelica Caetane Pelizza"
+    }
   ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hmhallan/democracia/issues"
   },
   "homepage": "https://github.com/hmhallan/democracia#readme",
-  
   "devDependencies": {
     "lite-server": "^2.3.0"
   },
-  
   "dependencies": {
     "truffle": "^4.0.6"
   }
