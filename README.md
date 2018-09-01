@@ -16,3 +16,4 @@ Exercício da disciplina de mestrado *Tópicos Especiais em Computação: Desenv
 * Hallan Medeiros
 * Luiz Rodrigo Albuquerque Pereira
 * Angelica Caetane Pelizza
+* Filipe Ibaldo Gomes
