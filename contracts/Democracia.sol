@@ -3,19 +3,16 @@ pragma solidity ^0.4.16;
 contract Democracia {
     
 
-    //definir uma struct chamada Proposta
-    /*
-        deve ter: 
-         - titulo, descricao (string)
-         - criador (address)
-         - data final (int) -> data em solidity é timestamp
-         - total de votos (int)
-         - votos a favor (array de address)
-         - votos contra (array de address)
-         - status (int) -> se esta em andamento, foi rejeitada ou aceita
-    */
+    //struct da Proposta
     struct Proposta {
         string titulo;
+        string descricao;
+        address criador;
+        uint dataFinal;
+        uint totalVotos;
+        address[] votosFavor;
+        address[] votosContra;
+        uint status;
     }
 
     //criar um array de Proposta como atributo do contrato
@@ -24,27 +21,29 @@ contract Democracia {
 
     function criarProposta(string titulo, string descricao, uint dataFinal, uint totalVotos) public returns (bool) {
         
-        //criar um 'objeto' (struct) de Proposta
+        Proposta memory p;
+        p.titulo = titulo;
+        p.descricao = descricao;
+        p.dataFinal = dataFinal;
+        p.totalVotos = totalVotos;
+        p.criador = msg.sender;
+        p.status = 1;
 
-        //adicionar ao array de propostas (atributo do contrato)
+        //adiciona ao array de propostas
+        propostas.push(p);
 
-        return false;
+        //retorna o indice do array da proposta criada
+        return true;
     }
 
     function getTotaldePropostas() public view returns (uint) {
-        //aqui, retornar o tamanho do array de propostas
-        return 0;
+        return propostas.length;
     }
     
     function getProposta( uint index ) public view returns (uint, string, string, address, uint, uint, uint, uint) {
-        
-        //no caso, como não tem um "ID", as propostas serão identificadas pelo índice no array
-        //esta função recebe o índice, busca a proposta no array e devolve os dados da proposta
-        //Solidity não ainda suporta retornar uma strutct ou um array, então o retorno deve ser algo como (supondo que 'p' é a proposta):
-        //return (index, p.titulo, p.descricao, p.criador, p.dataFinal, p.totalVotos, p.votosFavor.length, p.votosContra.length);
-
         if ( propostas.length >= index ) {
-
+            Proposta storage p = propostas[index];
+            return (index, p.titulo, p.descricao, p.criador, p.dataFinal, p.totalVotos, p.votosFavor.length, p.votosContra.length);
         }
     }
 
