@@ -1,0 +1,22 @@
+<form name="form" ng-submit="confirmar()" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">Confirmação de Transação</h3>
+    </div>
+
+    <div class="modal-body">
+        <div classs="form-group row">
+            <div class="col-12">
+                <label class="control-label">Digite o endereço da sua carteira</label>
+                <input class="form-control type="text" name="carteira" ng-model="carteira"
+                        ng-class="{ 'is-invalid': form.carteira.$invalid && (form.carteira.$touched || form.$submitted) }" 
+                        required>
+            </div>		
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit">Confirmar</button>
+        <button class="btn btn-warning" type="button" ng-click="cancelar()">Cancelar</button>
+    </div>
+
+</form>

@@ -1,22 +1,8 @@
 (function(){
 
-    angular.module('democracia.services').service('api', [ 'web3', 'contracts', '$q', function(web3, contracts, $q){
+    angular.module('democracia.services').service('api', [ 'contracts', '$q', function(contracts, $q){
     
         return {
-    
-            firstAccount: function(){
-                var deferred = $q.defer();
-    
-                web3.eth.getAccounts(function(error, accounts) {
-                    if (error) {
-                        console.log(error);
-                    }
-                    var account = accounts[0];
-                    deferred.resolve(account);
-                });
-    
-                return deferred.promise;
-            },
     
             proposta: {
     
@@ -28,12 +14,13 @@
                     contracts.democracia().then(function(instance){
                         
                         //chama a função "criar proposta" do contrato
-                        instance.criarProposta( proposta.titulo, proposta.descricao, proposta.visivelAte, proposta.totalVotos, {from: account} ).then(function(result) {
-                            //var event = instance.CreatedProposalEvent();
-                            //in this case, return the event that will be fired when the add in the blockchain is mined
-                            //deferred.resolve(event);
+                        instance.criarProposta( proposta.titulo, proposta.descricao, proposta.visivelAte.getTime(), proposta.totalVotos, {from: account, gas: 6721975} ).then(function(result) {
+                            //resolve a promise com o retorno da transacao
                             deferred.resolve(result);
-                        });
+                        }).catch(e => {
+                            //rejeita a promise com a exceção que ocorreu
+							deferred.reject(e);
+						});
                     });
                     return deferred.promise;
                 },
@@ -60,7 +47,10 @@
 
                             //resolve a promise com a proposta retornada do contrato
                             deferred.resolve(proposta);
-                        });
+                        }).catch(e => {
+                            //rejeita a promise com a exceção que ocorreu
+							deferred.reject(e);
+						});
                     });
                     return deferred.promise;
                 },
@@ -77,7 +67,10 @@
 
                             //resolve a promise com o total de propostas
                             deferred.resolve(data.toNumber());
-                        }); 
+                        }).catch(e => {
+                            //rejeita a promise com a exceção que ocorreu
+							deferred.reject(e);
+						});
                     });
                     return deferred.promise;
                 }

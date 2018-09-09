@@ -1,0 +1,17 @@
+
+<div class="modal-header">
+    <h3 class="modal-title">Transação Efetuada!</h3>
+</div>
+
+<div class="modal-body">
+    <div classs="form-group row">
+        <div class="col-12">
+            <p>Transação registrada com sucesso! Id da transação:</p>
+            <pre ng-bind="transacao.receipt.transactionHash"></pre>
+        </div>		
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="sair()">Ok</button>
+</div>
