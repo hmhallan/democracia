@@ -1,5 +1,5 @@
 (function(){
-	angular.module('democracia.controllers').controller('VotoController', ['$scope', function ($scope) {
+	angular.module('democracia.controllers').controller('PropostaController', ['$scope', function ($scope) {
 
 		$scope.dateOptions = {
 		    formatYear: 'yy',

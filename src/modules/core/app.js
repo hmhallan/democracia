@@ -22,12 +22,12 @@
             templateUrl: 'modules/democracia/welcome.html', 
             controller: 'WelcomeController'
         })
-        .when('/voto', {
-            templateUrl: 'modules/democracia/voto.html', 
-            controller: 'VotoController'
+        .when('/proposta', {
+            templateUrl: 'modules/democracia/proposta.html', 
+            controller: 'PropostaController'
         })
 
-        .when( '/', { redirectTo: '/voto' })
+        .when( '/', { redirectTo: '/proposta' })
         .otherwise ({ redirectTo: '/welcome' });
 
     }]);
