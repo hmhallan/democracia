@@ -7,7 +7,9 @@ Exercício da disciplina de mestrado *Tópicos Especiais em Computação: Desenv
 
 Este projeto utiliza:
 https://truffleframework.com/
+
 https://truffleframework.com/ganache
+
 https://solidity.readthedocs.io/en/v0.4.24/
 
 
