@@ -6,6 +6,7 @@ Exercício da disciplina de mestrado *Tópicos Especiais em Computação: Desenv
 (UFSC, 2018/2)
 
 Este projeto utiliza:
+
 https://truffleframework.com/
 
 https://truffleframework.com/ganache
