@@ -21,7 +21,7 @@ contract Democracia {
     Proposta[] public propostas;
 
 
-    function criarProposta(string titulo, string descricao, uint visivelAte, uint totalVotos) public returns (bool) {
+    function criarProposta(string titulo, string descricao, uint visivelAte, uint totalVotos) public {
         
         Proposta memory p;
         p.titulo = titulo;
@@ -34,8 +34,6 @@ contract Democracia {
         //adiciona ao array de propostas
         propostas.push(p);
 
-        //retorna o indice do array da proposta criada
-        return true;
     }
 
     function getTotaldePropostas() public view returns (uint) {
@@ -45,10 +43,10 @@ contract Democracia {
         return 0;
     }
     
-    function getProposta( uint index ) public view returns (uint, string, string, address, uint, uint, uint, uint) {
+    function getProposta( uint index ) public view returns (uint, string, string, address, uint, uint, uint, uint, uint) {
         if ( propostas.length >= index ) {
             Proposta storage p = propostas[index];
-            return (index, p.titulo, p.descricao, p.criador, p.visivelAte, p.totalVotos, p.votosFavor.length, p.votosContra.length);
+            return (index, p.titulo, p.descricao, p.criador, p.visivelAte, p.totalVotos, p.votosFavor.length, p.votosContra.length, p.status);
         }
     }
 
