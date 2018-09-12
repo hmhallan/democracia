@@ -17,3 +17,11 @@
     width: 10px !important;
     height: 10px !important;
 }
+
+.menu-link {
+    cursor: pointer;
+}
+
+.text-muted {
+    opacity: 0.5;
+}

@@ -1,5 +1,5 @@
 <br>
-<div class="row">
+<div class="row" ng-controller="MenuController">
 	
 	<div class="col-md-12">
 		<h4 class="text-center">Participe da Democracia</h4>
@@ -11,32 +11,32 @@
 
 	<div class="col-md-3">
 		<div class="card">
-		  <div class="card-body">
-		    <h6 class="subtitle mb-2 text-muted"> <i class="f6 fas fa-clipboard-list"></i> Ver Propostas</h6>
+		  <div class="card-body" ng-click="location.path('/lista-propostas')">
+		    <h6 class="subtitle mb-2 menu-link" ng-class="{ 'text-muted': location.path() != '/lista-propostas' }"> <i class="f6 fas fa-clipboard-list"></i> Ver Propostas</h6>
 		  </div>
 		</div>
 	</div>
 
 	<div class="col-md-3">
 		<div class="card">
-		  <div class="card-body">
-		    <h6 class="subtitle mb-2"> <i class="f6 fas fa-pen-nib"></i> Adicionar Proposta</h6>
+		  <div class="card-body" ng-click="location.path('/proposta')">
+		    <h6 class="subtitle mb-2 menu-link" ng-class="{ 'text-muted': location.path() != '/proposta' }"> <i class="f6 fas fa-pen-nib"></i> Adicionar Proposta</h6>
 		  </div>
 		</div>
 	</div>
 
-	<div class="col-md-3">
+	<div class="col-md-3" ng-show="false">
 		<div class="card">
 		  <div class="card-body">
-		    <h6 class="subtitle mb-2 text-muted"><i class="f6 far fa-check-square"></i> Meus votos</h6>
+		    <h6 class="subtitle mb-2 menu-link"><i class="f6 far fa-check-square"></i> Meus votos</h6>
 		  </div>
 		</div>
 	</div>
 
-	<div class="col-md-3">
+	<div class="col-md-3" ng-show="false">
 		<div class="card">
 		  <div class="card-body">
-		    <h6 class="subtitle mb-2 text-muted"><i class="f6 fas fa-chart-line"></i> Meus Resultados</h6>
+		    <h6 class="subtitle mb-2 menu-link"><i class="f6 fas fa-chart-line"></i> Meus Resultados</h6>
 		  </div>
 		</div>
 	</div>

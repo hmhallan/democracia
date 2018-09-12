@@ -26,9 +26,13 @@
             templateUrl: 'modules/democracia/proposta.html', 
             controller: 'PropostaController'
         })
+        .when('/lista-propostas', {
+            templateUrl: 'modules/democracia/lista.propostas.html', 
+            controller: 'ListaPropostasController'
+        })
 
         .when( '/', { redirectTo: '/proposta' })
-        .otherwise ({ redirectTo: '/welcome' });
+        .otherwise ({ redirectTo: '/lista-propostas' });
 
     }]);
 
