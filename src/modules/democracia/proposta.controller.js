@@ -1,5 +1,5 @@
 (function(){
-	angular.module('democracia.controllers').controller('PropostaController', ['$scope', '$uibModal', 'api', function ($scope, $uibModal, api) {
+	angular.module('democracia.controllers').controller('PropostaController', ['$scope', '$uibModal', 'api', '$location', function ($scope, $uibModal, api, $location) {
 
 		$scope.proposta = {};
 
@@ -28,7 +28,8 @@
 									}
 								});
 								modalOk.result.then(function(){
-									$scope.limparCampos();
+									//encaminha para a tela de listagem
+									$location.path("/lista-propostas");
 								});
 							},
 							function(error){

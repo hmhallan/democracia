@@ -4,8 +4,6 @@
         $scope.listarPropostas = function(){
             
             $scope.propostas = [];
-            
-            //implementar aqui a busca de propostas cadastradas
 
             //1 - buscar (via api) o total de propostas
             api.proposta.getTotaldePropostas().then(function(retorno){
