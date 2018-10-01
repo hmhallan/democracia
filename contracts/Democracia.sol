@@ -50,6 +50,30 @@ contract Democracia {
         }
     }
 
+    function votar( uint index, uint voto ) public {
+		
+		//valida o tipo de voto
+        require(voto == 1 || voto == 2);
+			
+		//busca a proposta
+        Proposta storage p = propostas[index];
+	
+		//valida a data do voto
+		//require( now < p.visivelAte );
+		
+		//valida voto duplicado
+		//address votou = p.votosFavor.push[msg.sender] || p.votosContra.push[msg.sender];
+		//require(!votou, "Já votou.");
+		
+		//efetua o voto
+        if (voto == 1) {
+            p.votosFavor.push(msg.sender);
+        } else {
+            p.votosContra.push(msg.sender);
+        }
+		
+    }  
+
     function kill() public { //encerra o contrato (somente o owner pode fazer isso)
         if(msg.sender == owner) {
             selfdestruct(owner); 
