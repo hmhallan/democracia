@@ -7,14 +7,13 @@
             <h6 class="card-subtitle mb-2 text-muted">Disponível até: {{p.visivelAte | date: 'dd/MM/yyyy'}}, votos necessários: {{p.totalVotos}} </h6>
             <p class="card-text" ng-bind="p.descricao"></p>
             
-            <button type="button" class="btn btn-success">Votar a favor</button>
-            <button type="button" class="btn btn-danger">Votar Contra</button>
+            <button type="button" class="btn btn-success" ng-click="votarFavor(p)">Votar a favor</button>
+            <button type="button" class="btn btn-danger" ng-click="votarContra(p)">Votar Contra</button>
 
         </div>
     </div>
     <br/>
 </div>
 
-<!--
+
 <pre>{{propostas | json}}</pre>
--->

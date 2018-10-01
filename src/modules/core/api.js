@@ -73,6 +73,25 @@
 						});
                     });
                     return deferred.promise;
+                },
+    
+                votar: function( proposta, voto, account ){
+                     //cria uma promise (assincrono)
+                    var deferred = $q.defer();
+
+                    //busca o contrato democracia
+                    contracts.democracia().then(function(instance){
+                        
+                        //chama a função "votar" do contrato passando o tipo de voto (1: favor, 2: contra)
+                        instance.votar( proposta.id, voto, {from: account, gas: 6721975} ).then(function(result) {
+                            //resolve a promise com o retorno da transacao
+                            deferred.resolve(result);
+                        }).catch(e => {
+                            //rejeita a promise com a exceção que ocorreu
+							deferred.reject(e);
+						});
+                    });
+                    return deferred.promise;
                 }
             }
     
