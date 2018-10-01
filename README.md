@@ -30,6 +30,5 @@ https://solidity.readthedocs.io/en/v0.4.24/
 
 # Créditos
 * Hallan Medeiros
-* Luiz Rodrigo Albuquerque Pereira
 * Angelica Caetane Pelizza
 * Filipe Ibaldo Gomes
