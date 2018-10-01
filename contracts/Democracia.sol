@@ -43,10 +43,10 @@ contract Democracia {
         return 0;
     }
     
-    function getProposta( uint index ) public view returns (uint, string, string, address, uint, uint, uint, uint, uint) {
+    function getProposta( uint index ) public view returns (uint, string, string, address, uint, uint, address[], address[], uint) {
         if ( propostas.length >= index ) {
             Proposta storage p = propostas[index];
-            return (index, p.titulo, p.descricao, p.criador, p.visivelAte, p.totalVotos, p.votosFavor.length, p.votosContra.length, p.status);
+            return (index, p.titulo, p.descricao, p.criador, p.visivelAte, p.totalVotos, p.votosFavor, p.votosContra, p.status);
         }
     }
 

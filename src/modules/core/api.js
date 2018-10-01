@@ -41,9 +41,20 @@
                                 criador: data[3],
                                 visivelAte: data[4].toNumber(),
                                 totalVotos: data[5].toNumber(),
-                                votosFavor: data[6].toNumber(),
-                                votosContra: data[6].toNumber()
+                                votosFavor: data[6],
+                                votosContra: data[7]
                             };
+
+                            //calcula informacoes
+                            proposta.votantes = proposta.votosFavor.length + proposta.votosContra.length;
+                            proposta.percFavor = (proposta.votosFavor.length / proposta.votantes) * 100;
+                            proposta.percContra = (proposta.votosContra.length / proposta.votantes) * 100;
+                            if (!proposta.percFavor){
+                                proposta.percFavor = 0;
+                            }
+                            if (!proposta.percContra){
+                                proposta.percContra = 0;
+                            }
 
                             //resolve a promise com a proposta retornada do contrato
                             deferred.resolve(proposta);

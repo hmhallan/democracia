@@ -3,17 +3,38 @@
 <div class="col-12" ng-repeat="p in propostas">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title" ng-bind="p.titulo" ></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Disponível até: {{p.visivelAte | date: 'dd/MM/yyyy'}}, votos necessários: {{p.totalVotos}} </h6>
-            <p class="card-text" ng-bind="p.descricao"></p>
-            
-            <button type="button" class="btn btn-success" ng-click="votarFavor(p)">Votar a favor</button>
-            <button type="button" class="btn btn-danger" ng-click="votarContra(p)">Votar Contra</button>
+            <div class="row">
+                <div class="col-8">
+                    <h5 class="card-title" ng-bind="p.titulo" ></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Disponível até: {{p.visivelAte | date: 'dd/MM/yyyy'}} </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Votos necessários: {{p.totalVotos}}, votos obtidos: {{p.votantes}} </h6>
+                    <p class="card-text" ng-bind="p.descricao"></p>
+                    
+                    <button type="button" class="btn btn-success" ng-click="votarFavor(p)">Votar a favor</button>
+                    <button type="button" class="btn btn-danger" ng-click="votarContra(p)">Votar Contra</button>
+                </div>
+
+                <div class="col-2">
+                    <div class="milestone-counter">
+                        <span class="highlight">{{p.percFavor | number: 1}}%</span>
+                        <div class="milestone-details">favor</div>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="milestone-counter">
+                        <span class="highlight">{{p.percContra | number: 1}}%</span>
+                        <div class="milestone-details">contra</div>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
     </div>
     <br/>
 </div>
 
-
+<!--
 <pre>{{propostas | json}}</pre>
+-->

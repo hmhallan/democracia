@@ -23,7 +23,7 @@
             $scope.votar(proposta, VOTO.favor);
         }
 
-        $scope.votarContra = function(){
+        $scope.votarContra = function(proposta){
             $scope.votar(proposta, VOTO.contra);
         }
 
